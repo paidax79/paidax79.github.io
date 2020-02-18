@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://dmimg.5054399.com/allimg/pkm/pk/22.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/01/29/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%80/test.jpg">
 <meta property="article:published_time" content="2020-01-29T09:16:10.000Z">
-<meta property="article:modified_time" content="2020-01-29T12:13:06.360Z">
+<meta property="article:modified_time" content="2020-02-18T03:35:27.931Z">
 <meta property="article:author" content="Paidax">
 <meta property="article:tag" content="MarkDown">
 <meta name="twitter:card" content="summary">
@@ -65,7 +65,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E7%9B%B8%E5%86%8C/">相册</a></li>
+				<li><a href="/categories/%E7%AC%94%E8%AE%B0">笔记</a></li>
+	        
+				<li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+	        
+				<li><a href="/archives">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -87,7 +91,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/paidax79/" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="/13083976106@163.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:13083976106@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -119,6 +123,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,18 +134,22 @@
 					
 						<a class="github" target="_blank" href="https://github.com/paidax79/" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="/13083976106@163.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:13083976106@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E7%9B%B8%E5%86%8C/">相册</a></li>
+					<li style="width: 25%"><a href="/categories/%E7%AC%94%E8%AE%B0">笔记</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -172,7 +184,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
+        
+          
+            <hr>
 <pre><code>第一种标题:#+space+内容(#可以有多个)，测试结果如下
 # 第一级标题
 ## 第二级标题
@@ -203,21 +217,20 @@
 文件名称的显示效果，不同的编辑器显示不同，可以自己测试。
 图片url指的是网上的图片资源，比如你百度图库看图就可以直接右键复制图片地址
 例如：http://dmimg.5054399.com/allimg/pkm/pk/22.jpg
-本地图片地址顾名思义就是本地的图片地址，绝对地址就是windows文件管理器地址栏显示的地址，相对地址就是文章所在文件夹的地址+文件夹中的地址，例如有张图片在这个.md文件的子目录&apos;MarkDown常用语法归类_img&apos;下，文件名为test.jpg 顺便一说，服务器端几乎没有人会使用绝对地址。
+本地图片地址顾名思义就是本地的图片地址，绝对地址就是windows文件管理器地址栏显示的地址，相对地址就是文章所在文件夹的地址+文件夹中的地址，例如有张图片在这个.md文件的子目录&apos;MarkDown常用语法一&apos;下，文件名为test.jpg 顺便一说，服务器端几乎没有人会使用绝对地址。
 例子:
 绝对地址: D:/blog/img/img/test.jpg
-相对地址: ./MarkDown常用语法归类_img/test.jpg
+相对地址: ./MarkDown常用语法一/test.jpg
 代码示例:
 ![测试图片0](http://dmimg.5054399.com/allimg/pkm/pk/22.jpg &quot;我也是一个注释&quot;)
-![测试图片1](./MarkDown常用语法归类_img/test.jpg)</code></pre><p><img src="http://dmimg.5054399.com/allimg/pkm/pk/22.jpg" alt="测试图片0" title="我也是一个注释"><br><img src="/2020/01/29/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%80/test.jpg" alt="测试图片1"></p>
+![测试图片1](./MarkDown常用语法一/test.jpg)</code></pre><p><img src="http://dmimg.5054399.com/allimg/pkm/pk/22.jpg" alt="测试图片0" title="我也是一个注释"><br><img src="./test.jpg" alt="测试图片1"></p>
 <hr>
 <pre><code>文章注释，就是小说的脚注，点击可以跳转注释。
 一般来说语法如下：
 
-文字脚注[^1] [^3]
+文字脚注&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;
 
-[^1]:脚注ID可以自己起，需要注意的只有脚注ID唯一，不论起什么ID最后都会自动排序
-[^3]:例如我这里命名的脚注ID是3，但是显示的时候是2
+
 
 github的MarkDown语法不支持脚注，所以就没有演示了，如果要在hexo中使用的话，解决方案放在下面。</code></pre><p><a href="https://github.com/LouisBarranqueiro/hexo-footnotes" target="_blank" rel="noopener">hexo-footnotes</a></p>
 <hr>
@@ -234,10 +247,9 @@ github的MarkDown语法不支持脚注，所以就没有演示了，如果要在
 </blockquote>
 </blockquote>
 <hr>
-
-      
-
-      
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">脚注ID可以自己起，需要注意的只有脚注ID唯一，不论起什么ID最后都会自动排序</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;">例如我这里命名的脚注ID是3，但是显示的时候是2</span><a href="#fnref:3" rev="footnote"> ↩</a></li></ol></div></div>
+          
+        
     </div>
     <div class="article-info article-info-index">
       
@@ -416,6 +428,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MarkDown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WebGL</a>
               </li>
             
             <div class="clearfix"></div>
