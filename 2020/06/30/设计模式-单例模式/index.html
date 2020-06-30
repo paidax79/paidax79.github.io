@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>浅谈下我所理解的赛博朋克 | paidax&#39;s blog</title>
+  <title>设计模式-单例模式-Java演示 | paidax&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;话说赛博朋克2077都还没发售还没到2077年，国内就开始有厂商打算做赛博朋克题材的游戏了……&amp;emsp;&amp;emsp;一般来说，不是看一下反响啊，做个用户调研啊，然后才会定项么，不会是一看赛博朋克2077预售量那么高，觉得发现了新的财富密码，然后做了个策划案上提，上司觉得：哦，真的有流量可以赚，然后就立项了。不会吧，不会吧，不是这样的吧。&amp;emsp;&amp;emsp;好了，说回赛">
+  <meta name="description" content="设计模式什么是设计模式？&amp;emsp;&amp;emsp;设计模式就是一套被反复使用、大多数人所知道的、经过分类的代码设计经验的总结。什么是单例设计模式？&amp;emsp;&amp;emsp;单例设计模式就是说整个系统运行过程中只有这么一个对象的实例，所有关于此对象的引用用的都是同一个实例。为什么要用单例设计模式？单例设计模式有什么好处？&amp;emsp;&amp;emsp;单例模式可以保证一个类只有一个实例，并且提供全局的访问点。因">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈下我所理解的赛博朋克">
-<meta property="og:url" content="http://yoursite.com/2020/06/28/%E9%9A%8F%E7%AC%94%E5%9B%9B-%E6%B5%85%E8%B0%88%E4%B8%8B%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B/index.html">
+<meta property="og:title" content="设计模式-单例模式-Java演示">
+<meta property="og:url" content="http://yoursite.com/2020/06/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="paidax&#39;s blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;话说赛博朋克2077都还没发售还没到2077年，国内就开始有厂商打算做赛博朋克题材的游戏了……&amp;emsp;&amp;emsp;一般来说，不是看一下反响啊，做个用户调研啊，然后才会定项么，不会是一看赛博朋克2077预售量那么高，觉得发现了新的财富密码，然后做了个策划案上提，上司觉得：哦，真的有流量可以赚，然后就立项了。不会吧，不会吧，不是这样的吧。&amp;emsp;&amp;emsp;好了，说回赛">
+<meta property="og:description" content="设计模式什么是设计模式？&amp;emsp;&amp;emsp;设计模式就是一套被反复使用、大多数人所知道的、经过分类的代码设计经验的总结。什么是单例设计模式？&amp;emsp;&amp;emsp;单例设计模式就是说整个系统运行过程中只有这么一个对象的实例，所有关于此对象的引用用的都是同一个实例。为什么要用单例设计模式？单例设计模式有什么好处？&amp;emsp;&amp;emsp;单例模式可以保证一个类只有一个实例，并且提供全局的访问点。因">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-28T13:00:55.000Z">
-<meta property="article:modified_time" content="2020-06-28T15:59:04.850Z">
+<meta property="article:published_time" content="2020-06-30T06:34:07.000Z">
+<meta property="article:modified_time" content="2020-06-30T07:54:33.857Z">
 <meta property="article:author" content="Paidax">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="单例模式">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="paidax&#39;s blog" type="application/atom+xml">
@@ -165,20 +167,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-随笔四-浅谈下赛博朋克" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-设计模式-单例模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      浅谈下我所理解的赛博朋克
+      设计模式-单例模式-Java演示
     </h1>
   
 
         
-        <a href="/2020/06/28/%E9%9A%8F%E7%AC%94%E5%9B%9B-%E6%B5%85%E8%B0%88%E4%B8%8B%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B/" class="archive-article-date">
-  	<time datetime="2020-06-28T13:00:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+        <a href="/2020/06/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-06-30T06:34:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
 </a>
         
       </header>
@@ -187,15 +189,35 @@
       
         
           
-            <p>&emsp;&emsp;话说赛博朋克2077都还没发售<del>还没到2077年</del>，国内就开始有厂商打算做赛博朋克题材的游戏了……<br>&emsp;&emsp;一般来说，不是看一下反响啊，做个用户调研啊，然后才会定项么，不会是一看赛博朋克2077预售量那么高，觉得发现了新的财富密码，然后做了个策划案上提，上司觉得：哦，真的有流量可以赚，然后就立项了。不会吧，不会吧，不是这样的吧。<br>&emsp;&emsp;好了，说回赛博朋克，要理解赛博朋克是什么，先把赛博朋克拆开来看：赛博（Cybernetics）和朋克（punk）。    </p>
-<h5 id="赛博-Cybernetics-控制论"><a href="#赛博-Cybernetics-控制论" class="headerlink" title="赛博-Cybernetics-控制论"></a>赛博-Cybernetics-控制论</h5><p>&emsp;&emsp;控制论这个词所试用的范围十分的广泛，最早期的时候是一种对动物和机械进行控制与通信方面的科学研究，之后衍生出类似赛博朋克和赛博空间（Cyberspace，要理解这个概念，可以参考刀剑神域，大概是在计算机或者互联网上构建一个三维信息空间，可以进行虚拟现实方面的交互。）等的一些衍生词汇。<br>&emsp;&emsp;按照我的理解，赛博这一词指的是近未来的科技风格，比如满大街的霓虹灯、立体投影，或者是充满科技风的车辆、飞行器。赛博在赛博朋克这个词中所代表的就是其中的科技元素。<a id="more"></a></p>
-<h4 id="朋克-punk"><a href="#朋克-punk" class="headerlink" title="朋克-punk"></a>朋克-punk</h4><p>&emsp;&emsp;朋克早期是小众音乐文化，也可以说是金属风格的分支。经过一段时间的发展，逐渐变为一种小众的流行元素。估计国内对朋克的了解不多，但是我现在要提两个词，这两个词在目前的青年人群中几乎是人尽皆知的程度，那就是：杀马特和非主流。<br>&emsp;&emsp;杀马特和非主流是国内对于朋克这一元素进行模仿的产物，但是没有模仿其内核，杀马特的内核更像是日本很久之前的一个潮流元素：山姥妆，流行山姥妆时候的日本的年轻女性和流行杀马特时候的中国的青年人群都处于一个需要被社会所关注、需要在社会上获得话语权的一个时间段。所以杀马特和非主流虽然是特立独行的风格，其内核还是偏向于积极。<br>&emsp;&emsp;而朋克不一样，朋克的内核不是积极的，所以这就决定了它肯定是一种小众的、不被大众主流所接受的这么一种文化。<br>&emsp;&emsp;朋克的内核主要由虚无主义、无政府主义、非专业化所构成，如果看过Rick&amp;Morty的话那对虚无主义肯定是有一些理解的，R&amp;M的核心就是虚无主义，因为有无穷多个平行宇宙，Rick所做的每一件错事：哪怕是将地球变为柯南伯格风格，都可以通过切换平行宇宙而得到“挽救”，世界、生命以及你做任何事的理由和结果都是没有意义的。另外两个嘛，就是字面意思。</p>
-<h4 id="赛博朋克-Cyberpunk"><a href="#赛博朋克-Cyberpunk" class="headerlink" title="赛博朋克-Cyberpunk"></a>赛博朋克-Cyberpunk</h4><blockquote>
-<p>经典的赛博朋克角色是边缘且性格疏远的独行者。他们生活在社会群体的边缘，一个弥漫反乌托邦氛围的未来：日常生活受到急剧改变的科技影响，普及的计算机化信息笼罩全球，以及侵入性的人体改造。——劳伦斯·普尔森   </p>
-</blockquote>
-<p>&emsp;&emsp;我这不是随便杜撰了个人出来，虽然上面那个人也称不上是什么名人（提名过“雨果奖最佳同好杂志”）就是了。他可以说是给赛博朋克下定义的人，或者说他是赛博朋克历史上给“朋克”这一部分下定义的人。<br>&emsp;&emsp;把上面的两个部分结合起来，形成了一种相对于朋克来说会更适合大众的一种风格，主要表现在游戏（赛博朋克2077）、电影（银翼杀手）、动漫（攻壳机动队）、小说（神经漫游者）等方面。在赛博朋克中各种各样让你眼花缭乱的科技元素充满你的视线，例如人工智能、仿生人、黑客、人体改造、立体投影；夜晚的时候霓虹灯几乎照亮整个世界。但是如果你仔细看看，在少数霓虹灯没能照亮的黑暗地段里，充斥着各种各样的谎言、斗争、几乎不存在的道德底线。<br>&emsp;&emsp;赛博朋克的主题就是发展到一定程度，人类已经在一定程度上战胜了死亡。然而科技带来的并不是好事，金钱、权力在这个社会中显得更加重要，有钱人才可以享受到那些让人眼花缭乱的科技，而穷人几乎失去奋斗目标，每天在灯红酒绿中浑浑噩噩的度日，科技的发展与社会秩序的崩坏形成对立。<br>&emsp;&emsp;总的来说，赛博朋克的故事是偏向黑暗的，几乎可以说是一定不适合大众，无法充当一种主流文化（因为我觉得主流文化应该是偏向积极、偏向光明的），不论是入坑赛博朋克2077，或者是想要了解对应的其他内容我都建议仔细考虑下，这样的内容是不是真的适合你。</p>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B" target="_blank" rel="noopener">维基百科-赛博朋克</a><br><a href="http://project.cyberpunk.ru/idb/scifi_history.html" target="_blank" rel="noopener">History of Cyberpunk Science Fiction</a></p>
+            <h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><p>什么是设计模式？<br>&emsp;&emsp;设计模式就是一套被反复使用、大多数人所知道的、经过分类的代码设计经验的总结。<br>什么是单例设计模式？<br>&emsp;&emsp;单例设计模式就是说整个系统运行过程中只有这么一个对象的实例，所有关于此对象的引用用的都是同一个实例。<br>为什么要用单例设计模式？单例设计模式有什么好处？<br>&emsp;&emsp;单例模式可以保证一个类只有一个实例，并且提供全局的访问点。因为只有一个实例，所以单例模式可以节省内存开销，又因为它提供了全局的访问点，所以单例模式可以提供信息的共享，在这方面类似于全局变量。<a id="more"></a></p>
+<h3 id="单例模式-Java"><a href="#单例模式-Java" class="headerlink" title="单例模式-Java"></a>单例模式-Java</h3><p>&emsp;&emsp;单例模式一般有两种实现方式，但是其构造思想都是一样的：  </p>
+<ul>
+<li>单例模式必须确保自己只有一个实例，也就是说其他类不能对单例类进行<strong>new</strong>操作。</li>
+<li>单例模式必须自己创建自己的实例。</li>
+<li>单例模式必须为其他对象提供唯一的实例。  </li>
+</ul>
+<p>&emsp;&emsp;所以根据以上的构造思想，下面是单例模式实现方式的演示（Java） </p>
+<p>饿汉式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line"> </span><br><span class="line">	private static Singleton instance&#x3D;new Singleton();&#x2F;&#x2F;创建自己的实例</span><br><span class="line"></span><br><span class="line">	private Singleton()&#123;&#125;;&#x2F;&#x2F;将构造函数私有化。</span><br><span class="line"></span><br><span class="line">	public static Singleton getInstance()&#123;</span><br><span class="line">		return instance;&#x2F;&#x2F;对每一个获取单例类的引用提供同一个实例。</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>访问方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Singleton instance &#x3D; Singleton.getInstance();</span><br></pre></td></tr></table></figure>
+<p>可以看出饿汉式在类加载的时候就实例化了自身，所以饿汉式会造成内存的浪费（忽略不计级别），但是写法简单而且避免了内存同步的问题，也是相当舒适的做法。<br>懒汉式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line"> </span><br><span class="line">	private static Singleton instance&#x3D;null;</span><br><span class="line">	&#x2F;&#x2F;私有化构造函数</span><br><span class="line">	private Singleton() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">	public static Singleton getInstance()&#123;</span><br><span class="line">		if(instance&#x3D;&#x3D;null)&#123;</span><br><span class="line">			instance&#x3D;new Singleton();</span><br><span class="line">		&#125;</span><br><span class="line">		return instance;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>貌似一般教学都会先讲这种编写懒汉式单例类的方法，这里姑且也讲一下。<br>懒汉式的核心思想就是在第一次访问的时候进行单例类的构造，所以比起饿汉式可以省内存，打个比方，就相当于你去餐厅吃饭，饿汉式的厨师一大早还没人来就做了一份鸡蛋炒饭，然后所有客人吃一碗。懒汉式的厨师等第一个客人来了的时候，做了份鸡蛋炒饭，之后的客人都吃这一碗。<del>话说换成新疆的超大锅手抓饭是不是会更合理一些。</del><br>说回正题，之所以是姑且说一下这种编写方法，因为它在单线程的时候可用，但是多线程就会出现同步问题，例如第一个线程访问的时候，进入了if语句，但是还没有new对象，此时第二个线程进入if语句判断的时候instance的值还是null，所以第二个线程也会执行if内部的语句，于是就new了两个对象。这就不符合单例模式的核心：只有一个实例。所以这种方式不是线程安全的，那要怎么样才是线程安全的呢。<br>唉，我这里可以提供一种线程安全的方式，加锁。</p>
+<p>懒汉式-线程安全第一版：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line"> </span><br><span class="line">	private static Singleton instance&#x3D;null;</span><br><span class="line">	</span><br><span class="line">	private Singleton() &#123;&#125;;</span><br><span class="line">	</span><br><span class="line">	public static synchronized Singleton getInstance()&#123;	</span><br><span class="line">		if(instance&#x3D;&#x3D;null)&#123;</span><br><span class="line">			instance&#x3D;new Singleton();</span><br><span class="line">		&#125;</span><br><span class="line">		return instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之所以是第一版，是因为这种方式确实是线程安全的，通过在构造实例的方法上加synchronized关键字实现加锁的这么一种方式，实现每次只能有一个线程使用该方法，于是就出现了一个新的问题，执行效率低下。那么怎么样可以又保证线程安全，又保证执行效率呢。  </p>
+<p>懒汉式-线程安全最终形态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * 懒汉式变种，属于懒汉式中最好的写法，保证了：延迟加载和线程安全</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	private static Singleton instance&#x3D;null;</span><br><span class="line">	</span><br><span class="line">	private Singleton() &#123;&#125;;</span><br><span class="line">	</span><br><span class="line">	public static Singleton getInstance()&#123;</span><br><span class="line">		 if (instance &#x3D;&#x3D; null) &#123;  </span><br><span class="line">	          synchronized (Singleton.class) &#123;  </span><br><span class="line">	              if (instance &#x3D;&#x3D; null) &#123;  </span><br><span class="line">	            	  instance &#x3D; new Singleton();  </span><br><span class="line">	              &#125;  </span><br><span class="line">	          &#125;  </span><br><span class="line">	      &#125;  </span><br><span class="line">	      return instance;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方式使用双重校验，判断了两次instance是否为空，其中的一次是锁线程的，保证了线程安全，又相对于上面那个第一版提高了执行效率。</p>
+<p>然后就是内部类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line"> </span><br><span class="line">	private Singleton() &#123;&#125;;</span><br><span class="line">	</span><br><span class="line">	private static class SingletonHolder&#123;</span><br><span class="line">		private static Singleton instance&#x3D;new Singleton();</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public static Singleton getInstance()&#123;</span><br><span class="line">		return SingletonHolder.instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种实现方式的主体思想其实和饿汉式很像，但是最终是懒汉式的一种实现（大雾），因为JVM的底层也就是内存优化那一块，有这么一个机制：静态的内部类在类被装载的时候不会实例化，所以只有当getInstance()方法被执行的时候，内部类被实例化，然后返回实例。所以这种方式可以保证线程安全而且也能实现内存优化，算是比较推荐使用的一种实现方式。</p>
+<p>然后就是JDK1.5之后的新的实现方式：枚举：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class SingletonObject7 &#123;</span><br><span class="line">    private SingletonObject7()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 枚举类型是线程安全的，并且只会装载一次</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private enum Singleton&#123;</span><br><span class="line">        INSTANCE;</span><br><span class="line"></span><br><span class="line">        private final SingletonObject7 instance;</span><br><span class="line"></span><br><span class="line">        Singleton()&#123;</span><br><span class="line">            instance &#x3D; new SingletonObject7();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private SingletonObject7 getInstance()&#123;</span><br><span class="line">            return instance;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static SingletonObject7 getInstance()&#123;</span><br><span class="line"></span><br><span class="line">        return Singleton.INSTANCE.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这应该还是目前实现单例类的最优解（Java），线程安全而且还可以防止反射等对单例类的破坏（反射会构造新的对象），推荐都使用这种方式进行实现。</p>
+<h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><blockquote>
+<p><a href="http://blog.csdn.net/dmk877/article/details/50311791" target="_blank" rel="noopener">Java设计模式—单例设计模式(Singleton Pattern)完全解析</a><br><a href="https://juejin.im/post/5d64ca62f265da03b638bb47" target="_blank" rel="noopener">为什么用枚举类来实现单例模式越来越流行？</a></p>
 </blockquote>
 
           
@@ -209,7 +231,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单例模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -228,18 +258,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          设计模式-单例模式-Java演示
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/28/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">运算符优先级与访问权限修饰符</div>
+    <a href="/2020/06/28/%E9%9A%8F%E7%AC%94%E5%9B%9B-%E6%B5%85%E8%B0%88%E4%B8%8B%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈下我所理解的赛博朋克</div>
       <i class="icon-circle-right"></i>
     </a>
   
