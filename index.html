@@ -165,6 +165,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-设计模式-工厂模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">设计模式-工厂模式-Java演示</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-07-01T09:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+          		<p>&emsp;&emsp;设计模式主要分为三大类，上期所介绍的单例模式和本期将要介绍的工厂模式同属为创造型模式。此外还有结构型模式和行为型模式。</p>
+<h4 id="创造型模式"><a href="#创造型模式" class="headerlink" title="创造型模式"></a>创造型模式</h4><blockquote>
+<p>创造型模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。</p>
+</blockquote>
+<p>&emsp;&emsp;这个时候就有一个问题出现了：为什么要隐藏创建逻辑（不直接使用new运算符实例化对象）呢？首先我们要明确软件开发过程是一个团队协作的过程，假设程序员A写了一个类叫ClassA，程序员B写了一个类CLassB需要调用ClassA类的某些方法。这种时候如果A修改了ClassA，比如将类名改为Class_A（当然一般不会出现这种问题，程序需要的类的类名都是在程序架构阶段就定义好的，日后需要的扩展类的类名一般也会进行定义），那么问题出现了：B也需要修改实例化ClassA的代码。于是程序员B就被程序员A增加了工作量，相信你也不会愿意每次别人改代码你也得改，所以隐藏创建逻辑就可以有效地降低别人给你添乱的概率。比如单例模式，当你需要使用单例的时候，你直接调用静态的方法获取单例对象的引用，对面无论怎么改只要还有getInstance()方法（如果直接删除了你所调用的单例类的其他方法也还是需要改代码的，嗯，一般也不会有这种情况），那随便他怎么改都不会给你 <del>添乱</del> 增加工作量。
+          
+        
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工厂模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-设计模式-单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1035,100 +1120,6 @@
 
 
   
-    <article id="post-WebGL学习笔记一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">WebGL学习笔记一</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2020-02-17T12:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          		<p>&emsp;&emsp;<strong>WebGL</strong>（全写Web Graphics Library）是一种3D绘图协议，这种绘图技术标准允许把<strong>JavaScript</strong>和<strong>OpenGL ES 2.0</strong>结合在一起，通过增加OpenGL ES 2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复杂的导航和数据视觉化。显然，WebGL技术标准免去了开发网页专用渲染插件的麻烦，可被用于创建具有复杂3D结构的网站页面，甚至可以用来设计3D网页游戏等等。<br>&emsp;&emsp;学习WebGL需要一些HTML5和JavaScript的基础，所以太过于基础的知识这份学习笔记不会再写。如果没有相应的基础但是对WebGL很感兴趣，推荐先了解一下JavaSCript。可以看《JavaScript权威指南》这本书，学习WebGL的话甚至不需要通读，只要看第一部分就够了。<br>&emsp;&emsp;开发WebGL应用的方便之处在于，你不用搭建开发环境(如编译器、连接器)。仅仅只需要一个支持WebGL的浏览器就可以运行WebGL程序，而编辑相关程序也只需要一个通用的文本编辑器就够用了。  </p>
-<pre><code>支持WebGL的浏览器：
-1.Google Chrome 9+
-2.Mozilla Firefox 4+
-3.Safari 5.1+（仅限于Mac OS X操作系统，不包括Windows）
-4.Opera 12 alpha及以上版本
-5.IE9+，但是IE并不支持WebGL，不过你可以通过下载并安装IEWebGL这个插件</code></pre><p>&emsp;&emsp;编译相关程序推荐使用 Notepad 或者 Visual Studio Code 这两个编辑器都带有关键字突出显示。  </p>
-          
-        
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WebGL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1276,6 +1267,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工厂模式</a>
               </li>
             
             <div class="clearfix"></div>

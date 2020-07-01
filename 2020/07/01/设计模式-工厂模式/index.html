@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: MarkDown | paidax&#39;s blog</title>
+  <title>设计模式-工厂模式-Java演示 | paidax&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="无名小卒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="paidax&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/MarkDown/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;设计模式主要分为三大类，上期所介绍的单例模式和本期将要介绍的工厂模式同属为创造型模式。此外还有结构型模式和行为型模式。 创造型模式 创造型模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。  &amp;emsp;&amp;emsp;这个时候就有一个问题出现了：为什么要隐藏创建逻辑（不直接使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-工厂模式-Java演示">
+<meta property="og:url" content="http://yoursite.com/2020/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="paidax&#39;s blog">
-<meta property="og:description" content="无名小卒">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;设计模式主要分为三大类，上期所介绍的单例模式和本期将要介绍的工厂模式同属为创造型模式。此外还有结构型模式和行为型模式。 创造型模式 创造型模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。  &amp;emsp;&amp;emsp;这个时候就有一个问题出现了：为什么要隐藏创建逻辑（不直接使">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-01T09:00:26.000Z">
+<meta property="article:modified_time" content="2020-07-01T16:16:53.795Z">
 <meta property="article:author" content="Paidax">
-<meta property="article:tag" content="MarkDown">
+<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="工厂模式">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="paidax&#39;s blog" type="application/atom+xml">
@@ -163,98 +167,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-设计模式-工厂模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/30/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%BA%8C/" class="archive-article-date">
-  	<time datetime="2020-01-30T03:30:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/30/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%BA%8C/">MarkDown常用语法二</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式-工厂模式-Java演示
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2020/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-07-01T09:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
           
+            <p>&emsp;&emsp;设计模式主要分为三大类，上期所介绍的单例模式和本期将要介绍的工厂模式同属为创造型模式。此外还有结构型模式和行为型模式。</p>
+<h4 id="创造型模式"><a href="#创造型模式" class="headerlink" title="创造型模式"></a>创造型模式</h4><blockquote>
+<p>创造型模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。</p>
+</blockquote>
+<p>&emsp;&emsp;这个时候就有一个问题出现了：为什么要隐藏创建逻辑（不直接使用new运算符实例化对象）呢？首先我们要明确软件开发过程是一个团队协作的过程，假设程序员A写了一个类叫ClassA，程序员B写了一个类CLassB需要调用ClassA类的某些方法。这种时候如果A修改了ClassA，比如将类名改为Class_A（当然一般不会出现这种问题，程序需要的类的类名都是在程序架构阶段就定义好的，日后需要的扩展类的类名一般也会进行定义），那么问题出现了：B也需要修改实例化ClassA的代码。于是程序员B就被程序员A增加了工作量，相信你也不会愿意每次别人改代码你也得改，所以隐藏创建逻辑就可以有效地降低别人给你添乱的概率。比如单例模式，当你需要使用单例的时候，你直接调用静态的方法获取单例对象的引用，对面无论怎么改只要还有getInstance()方法（如果直接删除了你所调用的单例类的其他方法也还是需要改代码的，嗯，一般也不会有这种情况），那随便他怎么改都不会给你 <del>添乱</del> 增加工作量。<a id="more"></a><br>&emsp;&emsp;而创造型模式的后半句：使得程序在判断真的对某个给定的实例需要创建那些对象时更加灵活，就来源于今天要介绍的工厂模式。</p>
+<h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><blockquote>
+<p>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
+</blockquote>
+<p>&emsp;&emsp;工厂模式，顾名思义就是你开一家工厂，工厂可以为客户生产不同的产品。例如我这有一个罐装食品工厂，它可以产出橘子罐头、杨梅罐头、杨桃罐头。于是首先我们需要一条装罐头的流水线（接口），这是大家都要的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Can</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们需要将这条流水线和水果加工的流水线（实现类）联合起来：<br>橘子罐头：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">orangeCan</span> <span class="keyword">implements</span> <span class="title">Can</span> </span>&#123;</span><br><span class="line">    <span class="comment">//橘子罐头的英语写法应该是Canned oranges，但是这样写会更加清晰，其他实现类同理。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是一个橘子罐头"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>杨梅罐头：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">bayberryCan</span> <span class="keyword">implements</span> <span class="title">Can</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是一个杨梅罐头"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>杨桃罐头：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">carambolaCan</span> <span class="keyword">implements</span> <span class="title">Can</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是一个杨桃罐头"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候还只是流水线，我们还需要一个房子以及和客户沟通的渠道（工厂类）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CanFactory</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//使用 getCan 方法获取罐头类型的对象</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Can <span class="title">getCan</span><span class="params">(String canType)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(canType == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(canType.equalsIgnoreCase(<span class="string">"OrangeCan"</span>))&#123;</span><br><span class="line">        <span class="comment">//equalsIgnoreCase为忽略大小写对比，例如new String("HELLO").equalsIgnoreCase("hello")的值为true</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> orangeCan();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(canType.equalsIgnoreCase(<span class="string">"BayberryCan"</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> bayberryCan();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(canType.equalsIgnoreCase(<span class="string">"CarambolaCan"</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> carambolaCan();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后就需要找个客户来体验下是不是能够达到客户的要求：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestClient</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        CanFactory canFactory = <span class="keyword">new</span> CanFactory();</span><br><span class="line">        <span class="comment">//获取三种不同的罐头对象，并执行showInfo方法</span></span><br><span class="line">        Can can1 = canFactory.getCan(<span class="string">"OrangeCan"</span>);</span><br><span class="line">        can1.showInfo();</span><br><span class="line"></span><br><span class="line">        Can can2 = canFactory.getCan(<span class="string">"BayberryCan"</span>);</span><br><span class="line">        can2.showInfo();</span><br><span class="line"></span><br><span class="line">        Can can3 = canFactory.getCan(<span class="string">"CarambolaCan"</span>);</span><br><span class="line">        can3.showInfo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<blockquote>
+<p>这是一个橘子罐头<br>这是一个杨梅罐头<br>这是一个杨桃罐头  </p>
+</blockquote>
+<p>&emsp;&emsp;工厂模式主要解决的问题就是接口选择的问题。当我们明确的计划在不同的条件下创建不同的实例的时候才会去只用工厂模式，工厂模式实现的关键就是创造过程在子类中去进行。<br>工厂模式的优点：  </p>
+<ul>
+<li>1、一个调用者想创建一个对象，只要知道其名称就可以了。   </li>
+<li>2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。  </li>
+<li>3、屏蔽产品的具体实现，调用者只关心产品的接口。  </li>
+</ul>
+<p>工厂模式的缺点：  </p>
+<ul>
+<li>每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。  </li>
+</ul>
+<p>&emsp;&emsp;一般来说只有当需要生成的对象是复杂对象的时候才会使用工厂模式，如果是简单对象，例如只用new就能够完成创建的对象，比如生成一个Integer对象，这种时候使用工厂模式就是单纯的在增加系统的复杂度了。</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><blockquote>
+<p><a href="https://baike.baidu.com/item/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/22912595?fr=aladdin" target="_blank" rel="noopener">百度百科-创造型模式</a></p>
+</blockquote>
+
+          
+        
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MarkDown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/29/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2020-01-29T09:16:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/29/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%80/">MarkDown常用语法一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MarkDown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工厂模式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/06/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式-单例模式-Java演示</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -277,9 +324,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
