@@ -6,23 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>WebGL学习笔记一 | paidax&#39;s blog</title>
+  <title>Unity3D渲染管线初探 | paidax&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;WebGL（全写Web Graphics Library）是一种3D绘图协议，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起，通过增加OpenGL ES 2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复">
+  <meta name="description" content="&amp;emsp;&amp;emsp;之前学WebGL的时候，总是会想一个问题：顶点着色器和片元着色器究竟有什么样的区别。我去查了片元的意思，不同的资料和博客说法大概都是：片元其实可以理解成像素。&amp;emsp;&amp;emsp;其实到这里为止我还是没有理清楚顶点着色器和片元着色器的区别，我只是明白了片元着色器其实是对像素进行处理的一个着色器。真正理解清楚是在最近，我第一次了解到渲染管线这个词。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WebGL学习笔记一">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/index.html">
+<meta property="og:title" content="Unity3D渲染管线初探">
+<meta property="og:url" content="http://yoursite.com/2020/07/05/Unity3D%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/index.html">
 <meta property="og:site_name" content="paidax&#39;s blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;WebGL（全写Web Graphics Library）是一种3D绘图协议，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起，通过增加OpenGL ES 2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;之前学WebGL的时候，总是会想一个问题：顶点着色器和片元着色器究竟有什么样的区别。我去查了片元的意思，不同的资料和博客说法大概都是：片元其实可以理解成像素。&amp;emsp;&amp;emsp;其实到这里为止我还是没有理清楚顶点着色器和片元着色器的区别，我只是明白了片元着色器其实是对像素进行处理的一个着色器。真正理解清楚是在最近，我第一次了解到渲染管线这个词。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/OpenGL%E4%B8%8EWebGL%E7%9A%84%E5%85%B3%E7%B3%BB.png">
-<meta property="article:published_time" content="2020-02-17T12:41:00.000Z">
-<meta property="article:modified_time" content="2020-02-18T06:56:46.845Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/05/Unity3D%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/%E5%85%89%E6%A0%85%E5%8C%96.png">
+<meta property="article:published_time" content="2020-07-05T02:47:54.000Z">
+<meta property="article:modified_time" content="2020-07-05T08:26:22.045Z">
 <meta property="article:author" content="Paidax">
-<meta property="article:tag" content="笔记">
-<meta property="article:tag" content="WebGL">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="Shader">
+<meta property="article:tag" content="渲染管线">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/OpenGL%E4%B8%8EWebGL%E7%9A%84%E5%85%B3%E7%B3%BB.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/05/Unity3D%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/%E5%85%89%E6%A0%85%E5%8C%96.png">
   
     <link rel="alternative" href="/atom.xml" title="paidax&#39;s blog" type="application/atom+xml">
   
@@ -168,20 +169,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-WebGL学习笔记一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Unity3D渲染管线" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      WebGL学习笔记一
+      Unity3D渲染管线初探
     </h1>
   
 
         
-        <a href="/2020/02/17/WebGL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2020-02-17T12:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
+        <a href="/2020/07/05/Unity3D%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" class="archive-article-date">
+  	<time datetime="2020-07-05T02:47:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
 </a>
         
       </header>
@@ -190,59 +191,11 @@
       
         
           
-            <p>&emsp;&emsp;<strong>WebGL</strong>（全写Web Graphics Library）是一种3D绘图协议，这种绘图技术标准允许把<strong>JavaScript</strong>和<strong>OpenGL ES 2.0</strong>结合在一起，通过增加OpenGL ES 2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复杂的导航和数据视觉化。显然，WebGL技术标准免去了开发网页专用渲染插件的麻烦，可被用于创建具有复杂3D结构的网站页面，甚至可以用来设计3D网页游戏等等。<br>&emsp;&emsp;学习WebGL需要一些HTML5和JavaScript的基础，所以太过于基础的知识这份学习笔记不会再写。如果没有相应的基础但是对WebGL很感兴趣，推荐先了解一下JavaSCript。可以看《JavaScript权威指南》这本书，学习WebGL的话甚至不需要通读，只要看第一部分就够了。<br>&emsp;&emsp;开发WebGL应用的方便之处在于，你不用搭建开发环境(如编译器、连接器)。仅仅只需要一个支持WebGL的浏览器就可以运行WebGL程序，而编辑相关程序也只需要一个通用的文本编辑器就够用了。  </p>
-<pre><code>支持WebGL的浏览器：
-1.Google Chrome 9+
-2.Mozilla Firefox 4+
-3.Safari 5.1+（仅限于Mac OS X操作系统，不包括Windows）
-4.Opera 12 alpha及以上版本
-5.IE9+，但是IE并不支持WebGL，不过你可以通过下载并安装IEWebGL这个插件</code></pre><p>&emsp;&emsp;编译相关程序推荐使用 Notepad 或者 Visual Studio Code 这两个编辑器都带有关键字突出显示。  </p>
-<a id="more"></a>
-<p><img src="./OpenGL%E4%B8%8EWebGL%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="OpenGL与WebGL关系"><br>图 一 OpenGL、OpenGL ES、WebGL之间的关系<br>&emsp;&emsp;如图所示，从2.0版本开始OpenGL支持了一项非常重要的特性：<strong>可编程着色器方法</strong>(programmable shader functions)。该特性被OpenGL ES 2.0继承，并成为了WebGL 1.0标准的核心部分。<br>&emsp;&emsp;<strong>着色器</strong>【着色器方法】使用了一种类似于C的编程语言实现精美的视觉效果。OpenGL ES 2.0所使用的着色器语言(<strong>GLSL ES</strong>)基于<strong>OpenGL着色器语言</strong>(GLSL)，WebGL继承自OpenGL ES 2.0，因此WebGL也使用GLSL ES编写着色器。<br>&emsp;&emsp;WebGL采用HTML5中新引入的canvas标签，canvas定义了网页上的绘图区域。  </p>
-<pre><code>&lt;canvas id=&quot;example&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;</code></pre><p>&emsp;&emsp;上面这行代码就定义了一个400*400的像素区域。默认情况下canvas是透明的，不支持canvas的老式浏览器(应该很少有人使用了)会直接忽略这一行，我们可以在标签中加入一条错误信息用于提示。</p>
-<pre><code>&lt;canvas id=&quot;example&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;
-请使用支持canvas的浏览器
-&lt;/canvas&gt;</code></pre><p>&emsp;&emsp;HTML5支持内嵌JavaScript代码，也可以单独写成JavaScript文件即后缀为.js的文件然后在HTML文件中引用。我推荐使用编写成JavaScript文件的形式，这样的话如果这一段代码在其他地方被用上也可以不用打开HTML文件再进行复制，只需要把JavaScript文件重新引用即可。不论使用哪种形式作为JavaScript代码的导入方式，你都需要告诉浏览器JavaScript代码从哪里开始执行。  </p>
-<pre><code>&lt;body onload=&quot;main()&quot;&gt;</code></pre><p>&emsp;&emsp;上面这句代码就为body元素指定了一个onload属性，意思是当body元素加载完成的时候(即页面加载完成的时候)执行main()函数。</p>
-<pre><code>&lt;body onload = &quot;main()&quot;&gt;
-  &lt;canvas id=&quot;example&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-  请使用支持canvas的浏览器
-  &lt;/canvas&gt;
-&lt;/body&gt;
-&lt;script&gt;
-  function main() {  
-  var canvas = document.getElementById(&apos;example&apos;);  
-  if (!canvas) { 
-    console.log(&apos;获取canvas元素失败&apos;);
-    return false; 
-  } 
-  //获取2d绘图上下文
-  var ctx = canvas.getContext(&apos;2d&apos;);
-  //绘制一个蓝色矩形
-  ctx.fillStyle = &apos;rgba(0, 0, 255, 1.0)&apos;;//设置填充颜色为蓝色
-  ctx.fillRect(0, 0, 150, 150);//以坐标(0,0)到(150,150)绘制一个矩形
-  }
-&lt;/script&gt;</code></pre><body onload = "main()">
-  <canvas id="example" width="150" height="150">
-  请使用支持canvas的浏览器
-  </canvas>
-</body>
-<script>
-  function main() {  
-  var canvas = document.getElementById('example');  
-  if (!canvas) { 
-    console.log('获取canvas元素失败');
-    return false; 
-  } 
-  //获取绘图上下文
-  var ctx = canvas.getContext('2d');
-  //绘制一个蓝色矩形
-  ctx.fillStyle = 'rgba(0, 0, 255, 1.0)';//设置填充颜色为蓝色
-  ctx.fillRect(0, 0, 150, 150);//以坐标(0,0)到(150,150)绘制一个矩形
-  }
-</script>  
-
-<p>&emsp;&emsp;上面就是代码执行效果，canvas的坐标系以左上角为原点，以从左向右的射线为X轴，从上向下的射线为Y轴。更详细的可以看W3School的<a href="https://www.w3school.com.cn/html5/html_5_canvas.asp" target="_blank" rel="noopener">canvas教程</a>。</p>
+            <p>&emsp;&emsp;之前学WebGL的时候，总是会想一个问题：顶点着色器和片元着色器究竟有什么样的区别。我去查了片元的意思，不同的资料和博客说法大概都是：片元其实可以理解成像素。<br>&emsp;&emsp;其实到这里为止我还是没有理清楚顶点着色器和片元着色器的区别，我只是明白了片元着色器其实是对像素进行处理的一个着色器。真正理解清楚是在最近，我第一次了解到渲染管线这个词。<a id="more"></a></p>
+<h4 id="渲染管线"><a href="#渲染管线" class="headerlink" title="渲染管线"></a>渲染管线</h4><p>&emsp;&emsp;渲染管线，其实就是渲染整个过程的一条流水线操作，就像罐头工厂的一条生产线，从加工到包装的过程中，顺序不可交换、过程不可逆。<br>&emsp;&emsp;我看到有篇文章所描述的渲染管线：顶点着色器 -&gt; 光栅化 -&gt; 片元着色器 -&gt;alpha 测试 -&gt; 模板测试 -&gt; 深度测试 -&gt; Blend -&gt; GBuffer -&gt; frontBuffer -&gt; frameBuffer -&gt; 显示器。<br>&emsp;&emsp;首先是顶点着色器，顶点着色器处理的是顶点，可以处理点的颜色信息。同时还会进行坐标转换（HTML5 Canvas的坐标和WebGL的坐标并不相同）。<br>&emsp;&emsp;然后就是光栅化，我觉得这个过程用图片来看会比较容易理解。<br><img src="./%E5%85%89%E6%A0%85%E5%8C%96.png" alt="光栅化"><br>&emsp;&emsp;这里其实就有个问题，那篇文章说顶点着色器只进行顶点的处理，但是光栅化的过程是将矢量图形转化为像素的这么一个过程，那顶点转化为矢量图形这个步骤是在哪里实现的呢。我觉得应该也是在顶点着色器中实现的，顶点着色器所处理的确实是顶点的信息，但是会通过预设的几种模式将顶点转化为矢量的图形，然后再进行光栅化处理。<br>&emsp;&emsp;经过光栅化处理之后的图形就是由像素构成的，然后就可以放进片元着色器中，进行纹理采样以及灯光等的计算。<br>&emsp;&emsp;这个时候其实就可以看出来：顶点着色器和片元着色器的区别在于，顶点着色器主要是进行顶点的处理，它所处理的信息较少。当数据经过光栅化传递到片元着色器的时候，信息已经经过了颜色的填充，由顶点信息变为了像素图形，此使所要处理的数据和原来的顶点相比就不是一个量级，所以一般对于信息的处理都是在顶点着色器中进行处理的。<br>&emsp;&emsp;然后就会进行三个测试：透明度测试、模板测试、深度测试，Unity里这三个测试是不提供编写方式的，只能进行开关。每次测试都会将一些不符合要求的像素点剔除，也就是那部分不进行显示。（<del>不过依照我的经验，一个东西是自动化的，那么它一般会在某些地方差强人意</del>）<br>&emsp;&emsp;Blend是将当前要渲染的物体与已经渲染出来的像素进行混合运算。<br>&emsp;&emsp;然后就将处理过的所有的像素信息放进GBuffer里，GBuffer将即将显示的信息传给frontBuffer，frontBuffer将像素信息传给frameBuffer进行显示，显示之后frameBuffer的信息就会被修改，frontBuffer的信息再次传入，这个信息每秒传递的次数应该就是游戏的帧数。</p>
+<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><blockquote>
+<p><a href="https://www.jianshu.com/p/02eebbf9ad9a" target="_blank" rel="noopener">Unity 之渲染管线初探</a><br><a href="https://zhuanlan.zhihu.com/p/77641752" target="_blank" rel="noopener">Unity可编程渲染管线（SRP）教程：一、自定义管线</a><br><a href="https://zhuanlan.zhihu.com/p/61216531" target="_blank" rel="noopener">渲染管线扫盲篇</a></p>
+</blockquote>
 
           
         
@@ -255,28 +208,21 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Unity</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WebGL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Shader</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">渲染管线</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -289,18 +235,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/19/%E9%9A%8F%E7%AC%94%E4%B8%80_%E9%81%93%E5%BE%B7%E5%9B%B0%E5%A2%83/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2020-2-19 随便写一下道德困境的理解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/30/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MarkDown常用语法二</div>
+    <a href="/2020/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式-工厂模式-Java演示</div>
       <i class="icon-circle-right"></i>
     </a>
   
